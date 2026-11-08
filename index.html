@@ -1,0 +1,19 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#b65c3e"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="icon" href="app-icon.svg" type="image/svg+xml"><title>Учет семейных ассистентов</title><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="styles.css"></head><body><main class="shell"><header><div class="hero-copy"><span class="eyebrow">СЕМЕЙНЫЙ ПОМОЩНИК</span><h1>Учет работы ассистентов</h1><p class="sub">Рабочее время, выплаты и дополнительные расходы</p></div>
+</header>
+<nav class="topnav"><a class="quiet" href="stats.html">Открыть статистику →</a> <button id="installApp" class="quiet install-app" type="button" hidden>Установить приложение</button></nav><section class="summary"><article><span>Часы за этот месяц</span><strong id="monthHours">0 ч</strong></article><article><span>Начислено за этот месяц</span><strong id="monthPay">0 ₽</strong></article><article><span>Дополнительные расходы</span><strong id="monthExpenses">0 ₽</strong></article></section>
+<div class="columns"><section class="panel"><span class="eyebrow">НАСТРОЙКИ</span><h2>Ассистенты и ставка</h2><form id="settingsForm"><label>Общая ставка за час, ₽<input name="rate" type="number" min="0" step="1" required></label><label>Имя ассистента<input name="assistant" maxlength="80" placeholder="Например, Анна" required></label><button class="primary">Добавить ассистента</button></form><div id="assistantList"></div></section>
+<section class="panel"><span class="eyebrow">РАБОЧИЙ ДЕНЬ</span><h2>Внести часы</h2><form id="workForm"><label>Ассистент<select name="assistantId" required></select></label><label>Дата<input name="date" type="date" required></label><label>Отработано часов<input name="hours" type="number" min="0.1" max="24" step="0.1" placeholder="Например, 7.5" required></label><label>Заметка <span class="optional">необязательно</span><input name="note" maxlength="120" placeholder="Комментарий"></label><button class="primary">Сохранить рабочий день</button></form></section>
+<section class="panel"><span class="eyebrow">ДОПОЛНИТЕЛЬНЫЕ РАСХОДЫ</span><h2>Добавить расход</h2><form id="expenseForm"><label>Дата<input name="date" type="date" required></label><label>Категория<input name="title" maxlength="80" placeholder="Такси, продукты…" required></label><label>Сумма, ₽<input name="amount" type="number" min="0.01" step="0.01" required></label><label>Ассистент <span class="optional">необязательно</span><select name="assistantId"><option value="">Общий расход</option></select></label><label>Комментарий<input name="note" maxlength="120"></label><button class="primary">Сохранить расход</button></form></section>
+<section class="panel"><span class="eyebrow">ОТЧЕТ И ВЫГРУЗКА</span><h2>Расчет за период</h2><form id="reportForm" class="reportform"><label>С даты<input name="from" type="date" required></label><label>По дату<input name="to" type="date" required></label><button class="primary">Показать отчет</button></form><div id="report"></div><button id="exportBtn" class="quiet export">Скачать отчет CSV</button></section></div>
+<section class="panel log"><div class="section-title"><div><span class="eyebrow">ПОСЛЕДНИЕ ЗАПИСИ</span><h2>История</h2></div></div><div id="history"></div></section><footer>Данные сохраняются в браузере на этом устройстве.</footer></main><script src="app.js"></script><script src="pwa.js"></script></body></html>
+
+
+
+
+
+
+
+
+
+
+
